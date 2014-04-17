@@ -14,7 +14,20 @@ if ($_FILES["file"]["error"] > 0) {
 
 $text = file_get_contents($_FILES["file"]["tmp_name"]);
 
-$textArr = array_filter(explode(" ", $text), 'strlen');
+function textFilter($word) {
+	if (!(strlen($word))) {
+		return 0;
+	}
+	elseif ($word == "-") {
+		return 0;
+	}
+	else {
+		return 1;
+	}
+}
+
+$textArr = array_filter(explode(" ", $text), 'textFilter');
+// $textArr = array_filter(explode(" ", $text), 'strlen');
 $numWords = count($textArr);
 
 include "porter_stemmer.php";
@@ -30,10 +43,10 @@ $count = array_reverse($count);
 $keys = array_keys($count);
 
 echo "<div class = 'container'><table class='table table-striped'>";
-echo "<tr>" . "<th>" . "Word" . "</th>" . "<th>" . "Frequency" . "</th>" . "</tr>";
-for ($i = 0; $i < 24; $i++) {
+echo "<tr>" . "<th>" . "Rank" . "</th>" . "<th>" . "Word Stem" . "</th>" . "<th>" . "Frequency" . "</th>" . "</tr>";
+for ($i = 0; $i < 25; $i++) {
 	echo "<tr>";
-	echo "<td>" . $keys[$i] . "</td>" . "<td>" . $count[$keys[$i]] . "</td>";
+	echo "<td>" . (string)($i+1) . "</td>" . "<td>" . $keys[$i] . "</td>" . "<td>" . $count[$keys[$i]] . "</td>";
 	echo "</tr>";
 }
 echo "</table>";
