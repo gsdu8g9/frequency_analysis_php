@@ -27,14 +27,10 @@ function textFilter($word) {
 }
 
 $textArr = array_filter(explode(" ", $text), 'textFilter');
-// $textArr = array_filter(explode(" ", $text), 'strlen');
-$numWords = count($textArr);
 
-include "porter_stemmer.php";
+include "stemmer.php";
 
-for ($i = 0; $i < $numWords; $i++) {
-	$textArr[$i] = PorterStemmer::Stem($textArr[$i]);
-}
+$textArr = stemmer($textArr);
 
 $count = array_count_values($textArr);
 asort($count);
@@ -56,6 +52,7 @@ echo "</table>";
 <br><br><br>
 <a href="app.php">Start over</a>
 </div>
+<br>
 
 </body>
 </html>

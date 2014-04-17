@@ -15,8 +15,7 @@
 		<label for="file">Upload a .txt file to see its top 25 most frequently used words!</label>
 		<input type="file" name="file" id="file">
 	</div>
-	<button type="submit" class="btn btn-primary">Analyze</button>
-	<!-- <input type="submit" name="submit" value="Analyze"> -->
+	<button type="submit" class="btn btn-default">Analyze</button>
 </form>
 </div>
 </body>
