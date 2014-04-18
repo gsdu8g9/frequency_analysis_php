@@ -34,11 +34,11 @@ for ($i=0; $i < $numWords; $i++) {
 	if ($textArr[$i] == "" or $textArr[$i] == "-") {
 		unset($textArr[$i]);
 	}
-	// removes punctuation if at end of word
+	// removes punctuation at end of word
 	else if (in_array(substr($textArr[$i], -1), $punctuation)) {
 		$textArr[$i] = substr($textArr[$i], 0, -1);
 	}
-	//removes punctuation if at beginning of word
+	//removes punctuation at beginning of word
 	else if (in_array(substr($textArr[$i], 0, 1), $punctuation)) {
 		$textArr[$i] = substr($textArr[$i], 1);
 	}
@@ -53,7 +53,10 @@ $wordFreq = array_reverse($wordFreq);
 
 $keys = array_keys($wordFreq);
 
-echo "<div class = 'container'> <table class='table table-striped'>";
+echo "<div class='container'> <br> <div class='jumbotron'>";
+// put story word frequency analysis here
+echo "<p class=:lead>" . $_FILES["file"]["name"] . " word frequency analysis</p>";
+echo "<table class='table table-hover table-bordered' style='background-color:white;'>";
 echo "<tr>" . "<th>" . "Rank" . "</th>" . "<th>" . "Word Stem" . "</th>" . "<th>" . "Frequency" . "</th>" . "</tr>";
 for ($i = 0; $i < 25; $i++) {
 	echo "<tr>";
@@ -66,6 +69,7 @@ echo "</table>";
 
 <br><br><br>
 <a href="app.php">Start over</a>
+</div>
 </div>
 <br>
 
