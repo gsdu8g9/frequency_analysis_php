@@ -8,7 +8,7 @@ This PHP webapp takes a text document and returns a table displaying the top 25 
 
 3) The PHP function array_count_values is run on the array of stemmed words, and returns an associative array whose keys are the words and whose values are the number of times each word appeared in the array, and thus in the document.
 
-4) This array is sorted by its values with the PHP function asort. This sorts them in ascending order, so the resulting array is then reversed so the most frequent words will be at the beginning of the array.
+4) This array is sorted by its values with the PHP function asort. This sorts them in ascending order, so the resultant array is then reversed so the most frequent words will be at the beginning of the array.
 
 5) The first 25 entries in the array are the top 25 most frequently used words. They are output to a table with their rank, the word, and its frequency.
 
