@@ -11,4 +11,3 @@ This PHP webapp takes a text document and returns a table displaying the top 25 
 4) This array is sorted by the value of each entry (the frequency of each word) with the PHP function *asort*. This sorts the entries in ascending order, so the resultant array is then reversed so the most frequent words will be at the beginning of the array.
 
 5) The first 25 entries in the array are the top 25 most frequently used words. They are output to a table with their rank, the word, and its frequency.
-

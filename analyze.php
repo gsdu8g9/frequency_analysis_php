@@ -66,11 +66,9 @@ echo "</table>";
 
 ?>
 
-<br><br><br>
 <a href="app.php">Start over</a>
 </div>
 </div>
-<br>
 
 </body>
 </html>
