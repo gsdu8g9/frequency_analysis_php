@@ -34,9 +34,11 @@ for ($i=0; $i < $numWords; $i++) {
 	if ($textArr[$i] == "" or $textArr[$i] == "-") {
 		unset($textArr[$i]);
 	}
+	// removes punctuation if at end of word
 	else if (in_array(substr($textArr[$i], -1), $punctuation)) {
 		$textArr[$i] = substr($textArr[$i], 0, -1);
 	}
+	//removes punctuation if at beginning of word
 	else if (in_array(substr($textArr[$i], 0, 1), $punctuation)) {
 		$textArr[$i] = substr($textArr[$i], 1);
 	}
