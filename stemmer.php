@@ -17,7 +17,7 @@ function stemmer($textArr) {
 	$stemArr = array();
 	foreach ($textArr as $word) {
 		$suffixLess = rmSuffix($word);
-		//if the word has a suffix and it's root is in $textArr, add it's root
+		//if the word has a suffix and its root is in $textArr, add its root
 		//that second condition is an imperfect mechanism to ensure the root is a real word
 		if ($suffixLess and in_array($suffixLess, $textArr)) {
 			array_push($stemArr, $suffixLess);
