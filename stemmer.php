@@ -2,12 +2,17 @@
 
 // problem: counts on root being in original $textArr to stem
 // so "landing" and "landed" would not be stemmed if "land" wasn't in $textArr
-// but to fix this, would have to check if stem in dictionary?
-// could use pspell_check function to check if stem spelled correctly
-// but this requires libraries to be installed on server
+// not a huge problem though, because if the root doesn't appear in the text array,
+// it's probably not going to be very frequent anyway
 
 // implemented this way to confirm that stem is real, and doesn't just pluck off a suffix
 // i.e. "les" is not a stem of "less"
+
+// to fix this, could check if stem in dictionary
+// could use pspell_check function to check if stem spelled correctly
+// but this requires libraries to be installed on server
+
+
 function stemmer($textArr) {
 	$stemArr = array();
 	foreach ($textArr as $word) {

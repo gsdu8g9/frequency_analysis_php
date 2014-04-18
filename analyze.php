@@ -54,7 +54,6 @@ $wordFreq = array_reverse($wordFreq);
 $keys = array_keys($wordFreq);
 
 echo "<div class='container'> <br> <div class='jumbotron'>";
-// put story word frequency analysis here
 echo "<p class=:lead>" . $_FILES["file"]["name"] . " word frequency analysis</p>";
 echo "<table class='table table-hover table-bordered' style='background-color:white;'>";
 echo "<tr>" . "<th>" . "Rank" . "</th>" . "<th>" . "Word Stem" . "</th>" . "<th>" . "Frequency" . "</th>" . "</tr>";
